@@ -1,0 +1,25 @@
+{
+    "name": "intro-component-with-signup-form-master",
+    "version": "1.0.0",
+    "description": "![Design preview for the Intro component with sign up form coding challenge](./design/desktop-preview.jpg)",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "vite dev --host",
+        "build": "vite build"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "styled-components": "^5.3.5",
+        "vite": "^3.0.2"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.7",
+        "postcss": "^8.4.14",
+        "tailwindcss": "^3.1.6"
+    }
+}
