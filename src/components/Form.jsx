@@ -4,11 +4,14 @@ import styled from 'styled-components';
 const InputF = styled.input`
     padding: 10px;
     border-radius:3px;
+    &::placeholder{
+        font-weight: 600;
+    }
     `
 export default function Form() {
 
     return (
-        <form className='flex gap-3 flex-col p-5 bg-white'>
+        <form className='flex gap-3 flex-col p-5 bg-white shadow-pShadow rounded-md'>
             <InputF type="text" name="firstName" placeholder="First Name" />
             <InputF type="text" name="lastName" placeholder="Last Name" />
             <InputF type="mail" name="email" placeholder="Email Address" />
