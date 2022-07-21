@@ -3,9 +3,18 @@
 @tailwind utilities;
 
 :root {
-    --pRed: hsl(0, 100%, 74%);
-    --pGreen: hsl(154, 59%, 51%);
-    --pBlue: hsl(248, 32%, 49%);
-    --pDarkBlue: hsl(249, 10%, 26%);
-    --pGrayishBlue: hsl(246, 25%, 77%);
+	--pRed: hsl(0, 100%, 74%);
+	--pGreen: hsl(154, 59%, 51%);
+	--pBlue: hsl(248, 32%, 49%);
+	--pDarkBlue: hsl(249, 10%, 26%);
+	--pGrayishBlue: hsl(246, 25%, 77%);
+}
+
+@layer components {
+	.form-error {
+		height: 20px !important;
+		opacity: 1 !important;
+		transform: translateY(0) !important;
+		transition: all 0.3s ease-in-out !important;
+	}
 }
