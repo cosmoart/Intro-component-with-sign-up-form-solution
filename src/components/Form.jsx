@@ -44,14 +44,14 @@ export default function Form() {
 			<input className='inputF  md:py-3 md:px-7' type="text" name="lastName" id='lastName' placeholder="Last Name" required />
 			<label className='labelF' htmlFor="lastName" aria-live='polite' />
 
-			<input className='inputF  md:py-3 md:px-7' type="mail" name="email" id='mail' placeholder="Email Address" required />
-			<label className='labelF' htmlFor="mail" aria-live='polite' />
+			<input className='inputF  md:py-3 md:px-7' type="email" name="email" id='email' placeholder="Email Address" required />
+			<label className='labelF' htmlFor="email" aria-live='polite' />
 
 			<input className='inputF  md:py-3 md:px-7' type="password" name="password" id='password' placeholder="Password" required />
 			<label className='labelF' htmlFor="password" aria-live='polite' />
 
 			<button type="submit" className='bg-pGreenDark hover:brightness-110 rounded-sm mt-2' onClick={e => handleSubmit(e)}>
-				<div className="bg-pGreen rounded-sm p-3 font-semibold uppercase transition -translate-y-1 hover:-translate-y-[6px] active:-translate-y-0">Claim your free trial</div>
+				<span className="bg-pGreen rounded-sm p-3 font-semibold uppercase transition -translate-y-1 hover:-translate-y-[6px] active:-translate-y-0 block">Claim your free trial</span>
 			</button>
 			<footer className='text-black text-opacity-40 text-[11px] font-bold mt-1'>By clicking the button, you are agreeing to our <a href="#terms" className='text-pRed'>Terms and Services</a></footer>
 		</form>
