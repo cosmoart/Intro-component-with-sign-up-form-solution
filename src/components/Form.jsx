@@ -7,7 +7,7 @@ export default function Form() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		const $mail = form.current.querySelector("#mail");
+		const $mail = form.current.querySelector("#email");
 
 		for (let i of form.current.querySelectorAll('input')) {
 			if (i.value === '') {
