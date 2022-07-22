@@ -37,18 +37,18 @@ export default function Form() {
 	}
 
 	return (
-		<form ref={form} className='flex flex-col p-6 bg-white shadow-pShadow rounded-md'>
+		<form ref={form} className='flex flex-col p-6 bg-white shadow-pShadow rounded-md md:px-7 md:py-9 3xl:gap-[9px]'>
 			<input className='inputF md:py-3 md:px-7' type="text" id='firstName' name="firstName" placeholder="First Name" required />
-			<label className='labelF' htmlFor="firstName" aria-live='true'/>
+			<label className='labelF' htmlFor="firstName" aria-live='polite' />
 
 			<input className='inputF  md:py-3 md:px-7' type="text" name="lastName" id='lastName' placeholder="Last Name" required />
-			<label className='labelF' htmlFor="lastName" aria-live='true' />
+			<label className='labelF' htmlFor="lastName" aria-live='polite' />
 
 			<input className='inputF  md:py-3 md:px-7' type="mail" name="email" id='mail' placeholder="Email Address" required />
-			<label className='labelF' htmlFor="mail" aria-live='true' />
+			<label className='labelF' htmlFor="mail" aria-live='polite' />
 
 			<input className='inputF  md:py-3 md:px-7' type="password" name="password" id='password' placeholder="Password" required />
-			<label className='labelF' htmlFor="password" aria-live='true' />
+			<label className='labelF' htmlFor="password" aria-live='polite' />
 
 			<button type="submit" className='bg-pGreenDark hover:brightness-110 rounded-sm mt-2' onClick={e => handleSubmit(e)}>
 				<div className="bg-pGreen rounded-sm p-3 font-semibold uppercase transition -translate-y-1 hover:-translate-y-[6px] active:-translate-y-0">Claim your free trial</div>

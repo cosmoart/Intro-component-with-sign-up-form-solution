@@ -39,5 +39,18 @@
 		height: 0;
 		opacity: 0;
 		transition: all 0.5s ease-in-out;
+		font-style: italic;
+	}
+	.labelF::after {
+		position: absolute;
+		right: -27px;
+		opacity: 0;
+		bottom: 24px;
+		content: url("./images/icon-error.svg");
+		transition: right 0.5s ease-in-out;
+	}
+	.form-error::after {
+		opacity: 1;
+		right: 10px;
 	}
 }
