@@ -9,6 +9,7 @@ const InputF = styled.input`
     border-radius:3px;
 	color: hsl(249, 10%, 26%);
 	transition: border-color 0.2s ease-in-out;
+	margin-bottom: 10px;
     &::placeholder{
         font-weight: 500;
     }
@@ -17,11 +18,12 @@ const InputF = styled.input`
 const LabelF = styled.label`
     text-align: right;
     color: hsl(0, 100%, 74%);
-    font-size: 14px;
+    font-size: 12px;
+	font-weight: 500;
     transform: translateY(-40px);
-    /* opacity: 0; */
 	height: 0;
-    transition: all 0.2s ease-in-out;
+	opacity: 0;
+    transition: all .5s ease-in-out;
 `
 
 export default function Form() {
@@ -53,7 +55,7 @@ export default function Form() {
 	}
 
 	return (
-		<form ref={form} className='flex gap-3 flex-col p-5 bg-white shadow-pShadow rounded-md'>
+		<form ref={form} className='flex flex-col p-6 bg-white shadow-pShadow rounded-md'>
 			<InputF type="text" id='firstName' name="firstName" placeholder="First Name" required />
 			<LabelF htmlFor="firstName" aria-live='true'></LabelF>
 
@@ -66,8 +68,10 @@ export default function Form() {
 			<InputF type="password" name="password" id='password' placeholder="Password" required />
 			<LabelF htmlFor="password" aria-live='true' />
 
-			<button type="submit" className='bg-pGreen rounded-sm p-3 font-semibold uppercase' onClick={e => handleSubmit(e)}>Claim your free trial</button>
-			<footer className='text-black text-opacity-50 text-xs font-bold'>By clicking the button, you are agreeing to our <a href="#terms" className='text-pRed'>Terms and Services</a></footer>
+			<button type="submit" className='bg-pGreenDark hover:brightness-110 rounded-sm mt-2' onClick={e => handleSubmit(e)}>
+				<div className="bg-pGreen rounded-sm p-3 font-semibold uppercase transition -translate-y-1 hover:-translate-y-[6px] active:-translate-y-0">Claim your free trial</div>
+			</button>
+			<footer className='text-black text-opacity-50 text-[11px] font-bold'>By clicking the button, you are agreeing to our <a href="#terms" className='text-pRed'>Terms and Services</a></footer>
 		</form>
 	)
 }
