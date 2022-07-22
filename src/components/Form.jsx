@@ -1,30 +1,6 @@
 import React, { useRef } from 'react';
-import styled from 'styled-components';
 
 const EMAILREGEX = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/gi;
-
-const InputF = styled.input`
-    padding: 10px;
-	border: 2px solid #3e3c4920;
-    border-radius:3px;
-	color: hsl(249, 10%, 26%);
-	transition: border-color 0.2s ease-in-out;
-	margin-bottom: 10px;
-    &::placeholder{
-        font-weight: 500;
-    }
-`
-
-const LabelF = styled.label`
-    text-align: right;
-    color: hsl(0, 100%, 74%);
-    font-size: 12px;
-	font-weight: 500;
-    transform: translateY(-40px);
-	height: 0;
-	opacity: 0;
-    transition: all .5s ease-in-out;
-`
 
 export default function Form() {
 	const form = useRef(null);
@@ -35,43 +11,49 @@ export default function Form() {
 
 		for (let i of form.current.querySelectorAll('input')) {
 			if (i.value === '') {
+				i.style.marginBottom = "0";
 				i.nextElementSibling.textContent = `${i.placeholder} cannot be empty`;
 				i.nextElementSibling.classList.add("form-error");
-				form.current.querySelector(`input[name="${i.name}"]`).style.border = "2px solid hsl(0, 100%, 74%)";
+				form.current.querySelector(`input[name="${i.name}"]`).style.border = "1px solid hsl(0, 100%, 74%)";
 			} else {
+				i.style.marginBottom = "15px";
 				i.nextElementSibling.textContent = "";
 				i.nextElementSibling.classList.remove("form-error");
-				form.current.querySelector(`input[name="${i.name}"]`).style.border = "2px solid #3e3c49";
+				form.current.querySelector(`input[name="${i.name}"]`).style.border = "1px solid #3e3c4930";
 			}
 		}
 		if (!$mail.value.match(EMAILREGEX) && $mail.value !== '') {
+			$mail.style.marginBottom = "0";
+			$mail.style.border = "1px solid hsl(0, 100%, 74%)";
 			$mail.nextElementSibling.textContent = "Looks like this is not an email";
 			$mail.nextElementSibling.classList.add("form-error");
 			return;
 		}
+
 		if (form.current.querySelectorAll('.form-error').length === 0) {
 			form.current.submit();
+			form.current.reset();
 		}
 	}
 
 	return (
 		<form ref={form} className='flex flex-col p-6 bg-white shadow-pShadow rounded-md'>
-			<InputF type="text" id='firstName' name="firstName" placeholder="First Name" required />
-			<LabelF htmlFor="firstName" aria-live='true'></LabelF>
+			<input className='inputF md:py-3 md:px-7' type="text" id='firstName' name="firstName" placeholder="First Name" required />
+			<label className='labelF' htmlFor="firstName" aria-live='true'/>
 
-			<InputF type="text" name="lastName" id='lastName' placeholder="Last Name" required />
-			<LabelF htmlFor="lastName" aria-live='true' />
+			<input className='inputF  md:py-3 md:px-7' type="text" name="lastName" id='lastName' placeholder="Last Name" required />
+			<label className='labelF' htmlFor="lastName" aria-live='true' />
 
-			<InputF type="mail" name="email" id='mail' placeholder="Email Address" required />
-			<LabelF htmlFor="mail" aria-live='true' />
+			<input className='inputF  md:py-3 md:px-7' type="mail" name="email" id='mail' placeholder="Email Address" required />
+			<label className='labelF' htmlFor="mail" aria-live='true' />
 
-			<InputF type="password" name="password" id='password' placeholder="Password" required />
-			<LabelF htmlFor="password" aria-live='true' />
+			<input className='inputF  md:py-3 md:px-7' type="password" name="password" id='password' placeholder="Password" required />
+			<label className='labelF' htmlFor="password" aria-live='true' />
 
 			<button type="submit" className='bg-pGreenDark hover:brightness-110 rounded-sm mt-2' onClick={e => handleSubmit(e)}>
 				<div className="bg-pGreen rounded-sm p-3 font-semibold uppercase transition -translate-y-1 hover:-translate-y-[6px] active:-translate-y-0">Claim your free trial</div>
 			</button>
-			<footer className='text-black text-opacity-50 text-[11px] font-bold'>By clicking the button, you are agreeing to our <a href="#terms" className='text-pRed'>Terms and Services</a></footer>
+			<footer className='text-black text-opacity-40 text-[11px] font-bold mt-1'>By clicking the button, you are agreeing to our <a href="#terms" className='text-pRed'>Terms and Services</a></footer>
 		</form>
 	)
 }

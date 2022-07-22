@@ -27,6 +27,9 @@ module.exports = {
 			boxShadow: {
 				"pShadow": "0px 5px 0px 0px rgba(0, 0, 0, 0.2)"
 			},
+			screens: {
+				"3xl": "1350px",
+			}
 		}
 	},
 	plugins: [],
